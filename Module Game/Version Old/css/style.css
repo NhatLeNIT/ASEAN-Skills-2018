@@ -1,0 +1,495 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    display: inline-block;
+    padding: 15px;
+}
+
+#wrapper {
+    width: 1200px;
+    height: 600px;
+    background: url("../images/background-3.jpg");
+    background-size: cover;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#game, #logo, #buttons, #counter, #sensible, #sensible img, #fuel-counter, #fuel-number, #fuel-gauge, [class|="elm"] {
+    position: absolute;
+}
+
+#game {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+#game.pause [class|="elm"] {
+    animation-play-state: paused;
+}
+
+#logo {
+    width: 80px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+#buttons {
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+#buttons img {
+    cursor: pointer;
+    transition: all .3s;
+    opacity: .8;
+}
+
+#buttons img:hover {
+    opacity: 1;
+}
+
+#counter {
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+#counter img, #counter span {
+    vertical-align: middle;
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#sensible {
+    width: 200px;
+    height: 200px;
+    bottom: 25px;
+    left: 25px;
+    z-index: 1;
+}
+
+#sensible img {
+    filter: grayscale(100%);
+    cursor: pointer;
+    transition: all .3s;
+}
+
+#sensible img:hover {
+    filter: grayscale(0);
+}
+
+#sensible img[alt="top"] {
+    top: 0;
+    left: calc(50% - 40px);
+    height: calc(50% - 20px);
+}
+
+#sensible img[alt="bottom"] {
+    bottom: 0;
+    left: calc(50% - 40px);
+    height: calc(50% - 20px);
+}
+
+#sensible img[alt="left"] {
+    left: 0;
+    top: calc(50% - 40px);
+    height: calc(50% - 20px);
+}
+
+#sensible img[alt="right"] {
+    right: 0;
+    top: calc(50% - 40px);
+    height: calc(50% - 20px);
+}
+
+#fuel-counter {
+    right: 10px;
+    bottom: 10px;
+    width: 200px;
+    height: 100px;
+    background: url("../images/fuel-counter.png");
+    background-size: cover;
+}
+
+#fuel-gauge {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(-90deg);
+    transform-origin: bottom center;
+    transition: all .3s;
+}
+
+#fuel-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30px;
+}
+
+.elm-main {
+    width: 120px;
+    height: 100px;
+    background: url("../images/main.png");
+    background-size: cover;
+    left: 100px;
+    top: 200px;
+    animation: main .3s linear infinite;
+}
+
+@keyframes main {
+    0% {
+        background: url("../images/main.png");
+        background-size: cover;
+    }
+    50% {
+        background: url("../images/main-o.png");
+        background-size: cover;
+    }
+    100% {
+        background: url("../images/main-y.png");
+        background-size: cover;
+    }
+
+}
+
+.elm-main-2 {
+    width: 120px;
+    height: 100px;
+    background: url("../images/main-2.png");
+    background-size: cover;
+    left: 100px;
+    top: 200px;
+    animation: main2 .3s linear infinite;
+}
+
+@keyframes main2 {
+    0% {
+        background: url("../images/main-2.png");
+        background-size: cover;
+    }
+    50% {
+        background: url("../images/main-2-o.png");
+        background-size: cover;
+    }
+    100% {
+        background: url("../images/main-2-y.png");
+        background-size: cover;
+    }
+
+}
+
+.elm-main-3 {
+    width: 120px;
+    height: 100px;
+    background: url("../images/main-3.png");
+    background-size: cover;
+    left: 100px;
+    top: 200px;
+    animation: main3 .3s linear infinite;
+}
+
+@keyframes main3 {
+    0% {
+        background: url("../images/main-3.png");
+        background-size: cover;
+    }
+    50% {
+        background: url("../images/main-3-o.png");
+        background-size: cover;
+    }
+    100% {
+        background: url("../images/main-3-y.png");
+        background-size: cover;
+    }
+
+}
+
+.elm-planet {
+    max-width: 80px;
+    left: 500px;
+    top: 300px;
+    animation: rotate 1s alternate infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: translateY(-10px);
+    }
+    70% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+.elm-asteroid {
+    width: 80px;
+    height: 80px;
+    left: 600px;
+    top: 200px;
+    background: url("../images/asteroid/asteroid-1.png");
+    background-size: cover;
+    animation: scale 1s ease-in-out alternate infinite;
+}
+.elm-asteroid::before {
+    content: '';
+    width: 80px;
+    height: 5px;
+    border: solid 1px #ffffff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.elm-asteroid::after {
+    content: '';
+    width: 80px;
+    height: 5px;
+    background: #db3f3d;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.elm-asteroid[hit="1"]::after {
+    width: 40px;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(.9);
+    }
+    20% {
+        transform: translateY(-10px);
+    }
+    70% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.elm-enemy {
+    width: 60px;
+    height: 60px;
+    background: url("../images/enemy/enemy-1.png");
+    background-size: cover;
+    left: 300px;
+    top: 500px;
+    animation: spaceship .5s steps(4) infinite;
+}
+
+.elm-friend {
+    width: 60px;
+    height: 60px;
+    background: url("../images/friend.png");
+    background-size: cover;
+    left: 300px;
+    top: 100px;
+    animation: spaceship .5s steps(4) infinite;
+}
+
+@keyframes spaceship {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: 238px;
+    }
+}
+
+.elm-fuel {
+    width: 28px;
+    height: 33px;
+    background: url("../images/fuel.png");
+    background-size: cover;
+    left: 400px;
+    top: 100px;
+    animation: fuel 1s ease-in-out alternate infinite;
+}
+
+@keyframes fuel {
+    0% {
+        transform: rotate(-30deg);
+    }
+    20% {
+        transform: scale(.9);
+
+    }
+    70% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: rotate(30deg);
+    }
+}
+.elm-bonus {
+    width: 35px;
+    height: 35px;
+    left: 500px;
+    top: 100px;
+    background: url("../images/bonus.png");
+    background-size: cover;
+    animation: fuel 1s ease-in-out alternate infinite;
+}
+
+.elm-main-shot {
+    left: 250px;
+    top: 240px;
+    width: 15px;
+    height: 15px;
+    background: url("../images/shot.png");
+    background-size: cover;
+}
+
+.elm-enemy-shot {
+    width: 15px;
+    height: 15px;
+    background: url("../images/shot.png");
+    background-size: cover;
+    transform: scale(-1);
+}
+
+/*Dialog*/
+@font-face {
+    font-family: asul;
+    src: url("../font/asul/Asul-Regular.ttf");
+}
+@font-face {
+    font-family: sacramento;
+    src: url("../font/sacramento/Sacramento-Regular.ttf");
+}
+
+.ui-dialog {
+    background: rgba(0,0,0,0);
+    text-align: center;
+}
+.ui-dialog * {
+    border: none;
+    color: #ffffff;
+}
+.ui-dialog-titlebar {
+    text-align: center;
+    font-size: 28px;
+    font-family: sacramento;
+    background: rgba(0,0,0,0);
+}
+.ui-dialog-titlebar-close {
+    display: none;
+}
+
+#help-dialog p {
+    font-size: 14px;
+    text-align: left;
+    animation: animateText 2s;
+}
+#help-dialog span {
+    font-size: 24px;
+    font-family: asul;
+    font-weight: bold;
+}
+#help-dialog button {
+    animation: animateButton 2.5s;
+}
+@keyframes animateText {
+    from {
+        transform: rotateY(-180deg);
+    }
+    to {
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes animateButton {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.ripple-button {
+    width: 120px;
+    height: 40px;
+    background: #db3f3d;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    position: relative;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.ripple-button:hover {
+    background: #241D4F;
+}
+.ripple-button:disabled {
+    background: #d5d5d5;
+    cursor: not-allowed;
+}
+.ripple-button::before {
+    content: '';
+    position: absolute;
+    left: 35%;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffffff;
+    opacity: .5;
+    transition: all .3s;
+    transform: scale(0);
+}
+.ripple-button:active::before {
+    transform: scale(1);
+}
+
+#form-dialog input {
+    color: #111111;
+    padding: 5px;
+}
+
+#ranking-dialog table {
+    width: 100%;
+    border-collapse: collapse;
+    border: solid 1px #ffffff;
+}
+#ranking-dialog tr, #ranking-dialog th, #ranking-dialog td {
+    border: solid 1px #ffffff;
+    padding: 5px;
+}
+
+#modal.active {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+}

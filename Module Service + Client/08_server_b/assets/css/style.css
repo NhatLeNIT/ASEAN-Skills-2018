@@ -1,0 +1,384 @@
+/* Preset */
+*  {
+    font-family: 'Segoe UI', 'Arial', 'sans-serif';
+    outline: none;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    opacity: .7;
+}
+body {
+    margin: 0 auto;
+}
+
+/* Layout */
+.wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 1440px;
+    height: auto;
+    margin: auto;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    border: 1px solid #ddd;
+}
+
+/* Panel */
+.panel-content {
+    padding: 20px;
+}
+.panel-list {
+    border-top: 2px solid #efefef;
+    height: 338px;
+    overflow: auto;
+}
+
+/* Form */
+.form-group {
+    display: block;
+    position: relative;
+}
+.form-group:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+/* Result */
+.result-list {
+    display: block;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-bottom: 50px;
+}
+.result-list > li {
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    cursor: pointer;
+    padding: 20px;
+}
+.result-list > li:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+.result-list > li:hover {
+    background: #efefef;
+}
+.result-detail {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.result-detail li {
+    display: flex;
+    align-items: center;
+}
+.result-detail li:not(:last-child) {
+    margin-bottom: 10px;
+}
+.result-detail label {
+    font-weight: 500;
+    width: 100px;
+    font-size: .8em;
+}
+.result-detail p {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    font-size: .9em;
+}
+
+/* Side */
+.side {
+    background: white;
+    width: 360px;
+    position: relative;
+    height: 100%;
+    border: 1px solid #ddd;
+    display: flex;
+   flex-direction: column;
+    overflow: auto;
+}
+.item {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+/** General **/
+/* Nav */
+.nav {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.nav a {
+    display: block;
+    padding: 15px;
+    text-align: center;
+}
+.nav li {
+    flex: 1;
+    list-style: none;
+}
+.nav li:not(:last-child) {
+    border-right: 1px solid #ddd;
+}
+/* Heading */
+.heading {
+    margin: 0;
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    color: #CC0000;
+}
+/* Inputs and Button */
+.input {
+    border: none;
+    background: #efefef;
+    border-radius: 4px;
+    padding: 10px;
+    color: gray;
+}
+.form-group .input {
+    display: block;
+    width: 100%;
+}
+.btn {
+    background: #CC0000;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    text-transform: capitalize;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    padding: 3px 10px;
+    padding-bottom: 5px;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.btn:active {
+    background: #152b55;
+}
+.form-content-right {
+    text-align: right;
+}
+/* Map */
+.map {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+}
+.map-container {
+    position: relative;
+    /*width: 1280px;*/
+    height: 800px;
+    overflow: auto;
+}
+
+/*Custom*/
+
+#modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0,0,0,0.5);
+}
+#modal .form {
+    width: 350px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -80%);
+    background: #ffffff;
+    border-radius: 5px;
+}
+#message {
+    width: 300px;
+    padding: 5px;
+    background: #ffc00e;
+    color: #ffffff;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.fade-enter-active,
+.fade-leave-active,
+.slide-enter-active {
+    transition: all .4s;
+}
+
+.fade-enter,
+.fade-leave-to {
+    transform: translateY(-15px);
+    opacity: 0;
+}
+
+.slide-enter,
+.slide-leave-to {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+.auto-complete  {
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    background: #e8e8e8;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+    max-height: 300px;
+    overflow: auto;
+}
+.auto-complete li {
+    padding: 5px;
+    cursor: pointer;
+}
+.auto-complete li:hover {
+    color: #ffffff;
+    background: #CC0000;
+}
+.map svg {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+}
+
+.attraction {
+    fill: green;
+
+}
+.restaurant {
+    fill: orange;
+}
+
+.closed {
+    fill: gray;
+}
+
+
+
+.line {
+    stroke-width: 3px;
+    stroke: #111111;
+    stroke-miterlimit: 10;
+}
+.place {
+    cursor: pointer;
+}
+.place-text {
+    font-size: 14px;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+#float-box {
+    background: #ffffff;
+    padding: 5px;
+}
+#float-box img {
+    width: 100px;
+    max-width: 100%;
+}
+#float-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+.from-place {
+    fill: blue;
+    font-size: 18px;
+}
+
+.to-place {
+    fill: red;
+    font-size: 18px;
+}
+
+.admin-menu {
+    position: relative;
+}
+.admin-menu ul {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    background: #e8e8e8;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    display: none;
+}
+.admin-menu li {
+    padding: 5px;
+    cursor: pointer;
+}
+.admin-menu li:hover {
+    background: #CC0000;
+    color: #ffffff;
+}
+.admin-menu:hover > ul {
+    display: block;
+}
+
+.margin-bottom-50 {
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1024px) {
+    .wrapper {
+        position: relative;
+    }
+
+    .container {
+        display: block;
+        width: 100%;
+    }
+
+    .side {
+        display: block;
+        width: 100%;
+    }
+
+    .item.form, .panel-list {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .item.form, .panel-list {
+        float: none;
+        width: 100%;
+    }
+    #modal .form {
+        width: 280px;
+        top: 10px;
+        left: 50%;
+        transform: translate(-50%, 0%);
+    }
+}

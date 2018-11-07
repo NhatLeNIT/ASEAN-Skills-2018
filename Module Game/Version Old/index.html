@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Star Battle</title>
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/logo-02.png" type="image/x-icon">
+</head>
+<body>
+
+<div id="wrapper">
+    <img src="images/logo-02.png" alt="logo" id="logo">
+
+    <ul id="buttons">
+        <li><img src="images/font-up.png" alt="font-up" id="font-up"></li>
+        <li><img src="images/font-down.png" alt="font-down" id="font-down"></li>
+        <li><img src="images/sound-on.png" alt="sound" id="sound"></li>
+        <li><img src="images/play.png" alt="play" id="play"></li>
+    </ul>
+
+    <ul id="counter">
+        <li>
+            <img src="images/score.png" alt="score">
+            <span id="score">0</span>
+        </li>
+        <li>
+            <img src="images/timer.png" alt="timer">
+            <span id="timer">0</span>
+        </li>
+        <li>
+            <img src="images/level.png" alt="level">
+            <span id="level">0</span>
+        </li>
+    </ul>
+
+    <div id="sensible">
+        <img src="images/top.png" alt="top">
+        <img src="images/right.png" alt="right">
+        <img src="images/bottom.png" alt="bottom">
+        <img src="images/left.png" alt="left">
+    </div>
+
+    <div id="fuel-counter">
+        <img src="images/fuel-gauge.png" alt="gauge" id="fuel-gauge">
+        <span id="fuel-number">0</span>
+    </div>
+
+    <div id="game">
+        <div class="elm-main" id="main"></div>
+        <div class="elm-enemy"></div>
+        <div class="elm-friend"></div>
+        <div class="elm-fuel"></div>
+        <div class="elm-bonus"></div>
+        <div class="elm-asteroid"></div>
+        <img src="images/planet/planet-1.png" alt="planet" class="elm-planet">
+        <img src="images/planet/planet-2.png" alt="planet" class="elm-planet" style="left: 1000px; top: 100px">
+        <img src="images/planet/planet-3.png" alt="planet" class="elm-planet" style="left: 900px; top: 200px">
+        <img src="images/planet/planet-4.png" alt="planet" class="elm-planet" style="left: 800px; top: 300px">
+        <img src="images/planet/planet-5.png" alt="planet" class="elm-planet" style="left: 700px; top: 400px">
+    </div>
+
+    <div id="my-dialog">
+        <div id="help-dialog" title="How to Play">
+            <p>
+                1. Move the spaceship using the sensible areas in the screen;<br>
+                2. The timer present the time lapsed;<br>
+                3. The fuel counter show the remain fuel;<br>
+                4. During the flight, the spaceship needs to destroy the asteroids and enemy spaceships that are
+                presented in the space;<br>
+                5. You can shoot pressing Space Bar;<br>
+                6. If the spaceship hits a asteroid or another spaceship, you lose 10 points of fuel;<br>
+                7. Enemy spaceship needs 1 shot to be destroyed, you will get 5 points for each enemy destroyed;<br>
+                8. Asteroid needs 2 shots to be destroyed, you will get 10 points for each asteroid destroyed;<br>
+                9. If you destroy a friendly spaceship, you lose 10 points;<br>
+                10. During the flight, the spaceship needs to collect fuel in the space;<br>
+                11. You can pause the game clicking in a button pause, or pressing the letter "p";<br>
+                12. Go beyond all limits;<br>
+                <span>Battle in Space with Star Battle Championship...</span>
+            </p>
+            <button class="ripple-button" id="start">Start Game</button>
+        </div>
+
+        <div id="form-dialog" title="Game Over">
+            <form action="#" onsubmit="return false" autocomplete="off">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter your name">
+            </form>
+            <button class="ripple-button" id="continue" disabled>Continue</button>
+        </div>
+
+        <div id="ranking-dialog" title="Ranking">
+            <table>
+                <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                    <th>Time</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Position</td>
+                    <td>Name</td>
+                    <td>Score</td>
+                    <td>Time</td>
+                </tr>
+                </tbody>
+            </table>
+            <button class="ripple-button" id="reload">Start Game</button>
+        </div>
+    </div>
+
+    <div id="modal" class="active"></div>
+
+    <audio src="sound/background.mp3" id="background" autoplay loop></audio>
+</div>
+
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
